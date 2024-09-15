@@ -37,5 +37,5 @@ Copy all the files into your project folder
 -> To stop running the app, just click "ctrl+C" in the terminal.
 
 
-# To get to our deployed streamlit app,
-[Just click here...!](https://glaucomadetection.streamlit.app)
+# To get to our deployed streamlit app
+[Just click here...!](https://glaucom.streamlit.app/)
