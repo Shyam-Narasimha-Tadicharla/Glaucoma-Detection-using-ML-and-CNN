@@ -1,7 +1,7 @@
 import streamlit as st
-import cnn as prd
+#import cnn as prd
 #import retina_classifier as rc
-#import logistic as lg
+import logistic as lg
 import direct_data as dd
 import cv2 as cv
 import numpy as np
@@ -36,18 +36,17 @@ if rad == "Predict":
             img = cv.cvtColor(img, cv.COLOR_RGB2BGR)
 
             # if rc.is_retinal(img):   this part must be included when checking if image is retinal fundus image or not
-            if True:
-                img=cv.imread("img.jpg")
-                gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
-                resized=cv.resize(gray,(290,290))
-                x_var=np.array(resized)
-                x_var=x_var.reshape(-1,290*290)/255
-                plt.imshow(img)
-                plt.title(prd.predict_and_plot("img.jpg"))
-                st.pyplot(plt.gcf())
+            img=cv.imread("img.jpg")
+            gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
+            resized=cv.resize(gray,(290,290))
+            x_var=np.array(resized)
+            x_var=x_var.reshape(-1,290*290)/255
+            plt.imshow(img)
+            plt.title(lg.predict_and_plot("img.jpg"))
+            st.pyplot(plt.gcf())
                 
-            else:
-                st.error('The uploaded image is not a valid retinal fundus image. Please upload a valid image.')
+            # else:
+            #     st.error('The uploaded image is not a valid retinal fundus image. Please upload a valid image.')
 
 if rad == "Comparison":
     st.subheader("Comparison of Glaucoma Detection Methods")
