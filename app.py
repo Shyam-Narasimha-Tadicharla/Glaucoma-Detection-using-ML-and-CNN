@@ -1,6 +1,6 @@
 import streamlit as st
 import cnn as prd
-import retina_classifier as rc
+#import retina_classifier as rc
 #import logistic as lg
 import direct_data as dd
 import cv2 as cv
@@ -35,7 +35,8 @@ if rad == "Predict":
             img = np.array(img)
             img = cv.cvtColor(img, cv.COLOR_RGB2BGR)
 
-            if rc.is_retinal(img):
+            # if rc.is_retinal(img):   this part must be included when checking if image is retinal fundus image or not
+            if True:
                 img=cv.imread("img.jpg")
                 gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
                 resized=cv.resize(gray,(290,290))
